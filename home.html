@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Store</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'poppins' sans-serif;
+    }
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: #222;
+    }
+    .container{
+        position: relative;
+        width: 600px;
+        height: 600px;
+        border: 2px solid #fff;
+        border-radius: 50%;
+    }
+    .container .icon{
+        position: relative;
+        left: -50%;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+    .container .icon .imgbx{
+        position: absolute;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        transition: 0.5s;
+        border: 1px solid #fff;
+        box-shadow: 0 0 0 4px #222,
+        0 0 0 6px #fff;
+        transform: rotate(calc(360deg/8 * var(--i)));
+        transform-origin: 340px;
+        z-index: 100;
+        overflow: hidden;
+
+    }
+    .container .icon .imgbx.active{
+        box-shadow: 0 0 0 6px #222,
+        0 0 0 6px #ff1d50;
+    }
+    .container .icon .imgbx img{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transform: rotate(calc(-360deg/8 * var(--i)));
+        transition: o.5s;
+    }
+    .content{
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+    }
+    .content::before{
+        content: '';
+        position: absolute;
+        inset: 60px;
+        border: 4px solid transparent;
+        border-left: 4px solid #2196F3;
+        border-right: 4px solid #fff;
+        border-radius: 50%;
+        animation: animte_01 5s linear infinite;
+        z-index: 1;
+        pointer-events: none;
+    }
+    @keyframes animte_01{
+        0%{
+            rotate: 0deg;
+        }
+        100%{
+            rotate: 360deg;
+        }
+    }
+    .content::after{
+        content: '';
+        position: absolute;
+        inset: 120px;
+        border: 4px solid transparent;
+        border-left: 4px solid #ff1d50;
+        border-right: 4px solid #fff;
+        border-radius: 50%;
+        animation: animte_02 2.5s linear infinite;
+        z-index: 1;
+        pointer-events: none;
+    }
+    @keyframes animte_02{
+        0%{
+            rotate: 360deg;
+        }
+        100%{
+            rotate: 0deg;
+        }
+    }
+</style>
+<body>
+    <header>
+        <h1>Online Store</h1>
+    </header>
+   <div class="container">
+    <div class="icon">
+        <div class="imgbx active" style="--i:1;">
+        <img src="images/Dodge Hellcat - Burning Rubber _LimitedStock_.jpeg">
+    </div>
+    <div class="imgbx" style="--i:2;">
+        <img src="images/Dodge Hellcat - Burning Rubber _LimitedStock_.jpeg">
+    </div>
+    <div class="imgbx" style="--i:3;">
+        <img src="images/Dodge Hellcat - Burning Rubber _LimitedStock_.jpeg">
+    </div>
+    <div class="imgbx" style="--i:4;">
+        <img src="images/Dodge Hellcat - Burning Rubber _LimitedStock_.jpeg">
+    </div>
+    <div class="imgbx" style="--i:5;">
+        <img src="images/Dodge Hellcat - Burning Rubber _LimitedStock_.jpeg">
+    </div>
+    <div class="imgbx" style="--i:6;">
+        <img src="images/Dodge Hellcat - Burning Rubber _LimitedStock_.jpeg">
+    </div>
+    <div class="imgbx" style="--i:7">
+        <img src="images/Dodge Hellcat - Burning Rubber _LimitedStock_.jpeg">
+    </div>
+    <div class="imgbx" style="--i:8;">
+        <img src="images/Dodge Hellcat - Burning Rubber _LimitedStock_.jpeg">
+    </div>
+    </div>
+    <div class="content"></div>
+   </div>
+</body>
+</html>
